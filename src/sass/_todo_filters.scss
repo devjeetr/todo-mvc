@@ -1,0 +1,20 @@
+.todo-filter-wrapper-div{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  border-top: 1px solid;
+  font-family: "Karla";
+  
+  div{
+    display: flex;
+    flex: 0 0 10%;
+    cursor: pointer;
+    padding: 0.4em;
+  }
+  div:hover{
+    text-decoration: underline;
+  }
+  .todo-filter-item--active{
+    text-decoration: underline;
+  }
+}

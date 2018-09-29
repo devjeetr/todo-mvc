@@ -1,0 +1,21 @@
+.todo-input-wrapper{
+  display: flex;
+
+  padding: 0.5em;
+  padding-left: none;
+  padding-right: none;
+  
+
+  input{
+    margin: 0;
+    flex: 0 0 100%;
+    outline: none;
+    border: none;
+    padding-left: 0.5em;
+    font-size: 30px;
+    font-family: "Karla";
+  }
+
+  input:focus{
+  }
+}

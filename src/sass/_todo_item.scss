@@ -1,0 +1,44 @@
+
+.todo-item-wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 0;
+  font-size: 25px;
+  
+  .todo-checkbox-div, 
+  .todo-delete-button-div, 
+  .todo-text-div{
+    display: flex;
+    padding: 0.5em;
+    align-items: center;
+    // justify-content: center;
+  }
+
+  .todo-delete-button-div{
+    visibility: hidden;
+    justify-content: flex-end;
+  }
+
+  .todo-checkbox-div{
+    flex: 0 0 5%;
+    padding-right: 0;
+  }
+
+  .todo-delete-button-div{
+    flex: 20%;
+  }
+
+  .todo-text-div{
+    flex: 0 0 70%;
+  }
+
+  .todo-delete-button-div:hover{
+    cursor: pointer;
+  }
+}
+
+.todo-item-wrapper:hover{
+  .todo-delete-button-div{
+    visibility: visible;
+  }
+}

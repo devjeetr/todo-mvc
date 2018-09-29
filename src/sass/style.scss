@@ -1,0 +1,34 @@
+@import "./common";
+@import "./todo_list";
+@import "./todo_item";
+@import "./todo_input";
+@import "./todo_filters";
+
+
+#app{
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  font-family: "Karla";
+}
+
+header{
+  grid-column: 3 / 10;
+  grid-row: 1 / 4;
+  display: flex;
+  color: white;
+  font-size: 50px;
+  align-items: center;
+  justify-content: center;
+  h1{
+    display: flex;
+    // justify-content: center;
+    // align-items: center;
+  }
+}
+.todo-list-wrapper{
+  grid-column: 3 / 10;
+  grid-row: 4 / 10;
+}
