@@ -1,15 +1,21 @@
-import Component from '../Component/Component';
+import componentFramework from 'component-framework';
 import { el } from 'vanillajs-framework';
 
+const Component = componentFramework.Component;
 
 let TodoInput = Object.create(Component);
 
-TodoInput.init = function() {
+TodoInput.init = function () {
   Component.init.call(this);
 
   // create elements 
   this.__root = el('div.todo-list-input-root');
-  this.$todoInput = el('input').attr('type', 'text');
+  this.$todoInput = el('input').attrs(
+                                  {
+                                    'type': 'text',
+                                    'placeholder': 'What needs to be done?'
+                                  }
+                                );
   this.__root.append(this.$todoInput);
 
   // create events

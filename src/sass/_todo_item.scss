@@ -1,44 +1,66 @@
 
-.todo-item-wrapper{
+.todo-list-todo-item-root{
   display: flex;
   flex-flow: row nowrap;
   margin-top: 0;
   font-size: 25px;
-  
-  .todo-checkbox-div, 
-  .todo-delete-button-div, 
-  .todo-text-div{
+  height: 40px;
+  .todo-list-todo-item-checkbox-div, 
+  .todo-list-todo-item-delete-button-div, 
+  .todo-list-todo-item-text-div{
     display: flex;
     padding: 0.5em;
     align-items: center;
-    // justify-content: center;
   }
 
-  .todo-delete-button-div{
+  .todo-list-todo-item-delete-button-div{
     visibility: hidden;
     justify-content: flex-end;
   }
 
-  .todo-checkbox-div{
+  .todo-list-todo-item-checkbox-div{
     flex: 0 0 5%;
     padding-right: 0;
+    input{
+      outline: none;
+      // borde
+    }
   }
 
-  .todo-delete-button-div{
+  .todo-list-todo-item-delete-button-div{
     flex: 20%;
   }
 
-  .todo-text-div{
+  .todo-list-todo-item-text-div{
+    display: flex;
     flex: 0 0 70%;
+    font-size: 20px;
+    height: 100%;
+    // line-height: 1.2em;
+    input{
+      flex: 0 0 100%;
+      font-size: 20px;
+      font-family: inherit;
+      width: auto;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      outline: none;
+      border: none;
+    }
+  }
+  .todo-item--editing{
+    border: 1px solid;
   }
 
-  .todo-delete-button-div:hover{
+  .todo-list-todo-item-delete-button-div:hover{
     cursor: pointer;
   }
 }
 
-.todo-item-wrapper:hover{
-  .todo-delete-button-div{
+.todo-list-todo-item-root:hover{
+  .todo-list-todo-item-delete-button-div{
     visibility: visible;
   }
+  box-shadow: 0 0 20px;
 }

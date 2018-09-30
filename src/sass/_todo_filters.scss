@@ -1,8 +1,8 @@
-.todo-filter-wrapper-div{
+.todo-list-filter-root{
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  border-top: 1px solid;
+  // border-top: 1px solid;
   font-family: "Karla";
   
   div{
@@ -14,7 +14,17 @@
   div:hover{
     text-decoration: underline;
   }
-  .todo-filter-item--active{
+  .filter-option-item--active{
     text-decoration: underline;
   }
+}
+
+.todo-list-status-bar-root{
+  display: flex;
+  border-top: 1px solid;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  flex-flow: row nowrap;
+  padding: 1em;
 }
