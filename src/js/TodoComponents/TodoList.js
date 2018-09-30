@@ -80,6 +80,8 @@ function addTodo(newTodoText) {
   updateRemaining.call(this);
   // TODO
   // display filter bar here
+  this.TodoStatusBar.dom().dom().classList.add('visible');
+  // console.log(this.TodoStatusBar;
 }
 
 function updateTodo(id) {
@@ -120,6 +122,11 @@ function clearCompletedTodos() {
   }
   /* eslint-enable */
   updateRemaining.call(this);
+  console.log(this.todosDataStore.entries().next());
+  if(!this.todosDataStore.entries().next()) {
+    this.TodoStatusBar.dom().dom().classList.remove('visible');
+  }
+  
 }
 
 
@@ -148,6 +155,9 @@ function deleteTodo(id) {
   this.todosDataStore.delete(id);
 
   updateRemaining.call(this);
+  if(!this.todosDataStore.entries().next()) {
+    this.TodoStatusBar.dom().dom().classList.remove('visible');
+  }
 }
 
 

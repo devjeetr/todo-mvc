@@ -4,9 +4,10 @@
   height: 100%;
   flex-flow: column nowrap;
   border-radius: 2px;
-  box-shadow: 0 0 2em black;
-  font-family: "Karla";
-  background-color: white;
+  box-shadow: 0 0 1px black;
+  font-family: cursive;
+  background-color: $todo-list-background-color;
+  color: $todo-list-primary-font-color;
 }
 
 .todo-list-todos-root{

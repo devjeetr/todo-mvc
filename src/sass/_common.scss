@@ -2,11 +2,13 @@
   box-sizing: border-box;
 }
 
-$background-color:#03a9f4;
+$background-color: #FFFFFF;
+$todo-list-background-color: #FCFCFC;
+$todo-list-primary-font-color: #233D4D;
 
 body{
   margin: 0;
   padding: 0;
   background-color: $background-color;
-  font-family: "Karla";
+  font-family: "Charmonman";
 }

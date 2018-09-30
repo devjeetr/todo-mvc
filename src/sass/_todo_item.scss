@@ -4,12 +4,18 @@
   flex-flow: row nowrap;
   margin-top: 0;
   font-size: 25px;
-  height: 40px;
+  height: 3em;
+  // border-bottom: 1px solid;
+  border-top: 1px solid;
+
   .todo-list-todo-item-checkbox-div, 
   .todo-list-todo-item-delete-button-div, 
   .todo-list-todo-item-text-div{
     display: flex;
-    padding: 0.5em;
+
+    padding: 1em;
+    // padding: 0.5e
+    align-content: center;
     align-items: center;
   }
 
@@ -22,8 +28,9 @@
     flex: 0 0 5%;
     padding-right: 0;
     input{
-      outline: none;
-      // borde
+      // outline: none;
+      // height: 100%;
+      // width: 100;
     }
   }
 
@@ -40,17 +47,22 @@
     input{
       flex: 0 0 100%;
       font-size: 20px;
-      font-family: inherit;
+      // font-family: inherit;
+
+      border: none;
+      background: transparent;
       width: auto;
       height: 100%;
       margin: 0;
       padding: 0;
       outline: none;
-      border: none;
+      // opacity: 0;
     }
   }
   .todo-item--editing{
     border: 1px solid;
+    // opacity: 1;
+    transition: opacity 10s linear;
   }
 
   .todo-list-todo-item-delete-button-div:hover{
@@ -62,5 +74,7 @@
   .todo-list-todo-item-delete-button-div{
     visibility: visible;
   }
-  box-shadow: 0 0 20px;
+  box-shadow: 0 0 8px;
+
+  transition: box-shadow 0.4s ease-in-out;
 }

@@ -2,9 +2,8 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
-  // border-top: 1px solid;
-  font-family: "Karla";
-  
+  align-items: center;
+  font-size: 19px;
   div{
     display: flex;
     flex: 0 0 10%;
@@ -16,15 +15,23 @@
   }
   .filter-option-item--active{
     text-decoration: underline;
+    font-weight: 900;
   }
 }
 
 .todo-list-status-bar-root{
   display: flex;
-  border-top: 1px solid;
+  border-top: 2px solid;
   justify-content: space-between;
   align-content: center;
   align-items: center;
   flex-flow: row nowrap;
   padding: 1em;
+  visibility: hidden;
+  display: none;
+
+}
+.visible{
+  visibility: visible;
+  display: flex;
 }

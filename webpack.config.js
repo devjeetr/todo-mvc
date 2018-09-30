@@ -49,7 +49,14 @@ module.exports = {
 		new HtmlWebPackPlugin({
 			template: "./src/html/index.html",
 			filename: "./index.html"
-    })
+    }),
+    new GoogleFontsPlugin({
+      fonts: [
+          { family: "Source Sans Pro" },
+          { family: "Roboto", variants: [ "400", "700italic" ] },
+          { family: 'Charmonman' }
+      ]
+    }),
 	],
 	devtool: "source-map"
 }

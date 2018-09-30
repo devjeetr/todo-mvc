@@ -1,24 +1,23 @@
 .todo-list-input-root{
   display: flex;
 
-  padding: 0.5em;
+  padding: 1em;
   padding-left: none;
   padding-right: none;
   // flex: 0 0 10%;
-
+  border-bottom: 1px solid;
   input{
     margin: 0;
     flex: 0 0 100%;
     outline: none;
     border: none;
-    padding-left: 0.5em;
+    // padding-left: 0.em;
     font-size: 30px;
+    background-color: $todo-list-background-color;
+    color: $todo-list-primary-font-color;
   }
 
   input:placeholder-shown{
     border: none;
-  }
-  input{
-    border-bottom: 1px solid green;
   }
 }

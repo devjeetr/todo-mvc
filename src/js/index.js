@@ -2,6 +2,7 @@ import {el} from 'vanillajs-framework';
 // import * as componentFramework from 'component-framework';
 import TodoList from './TodoComponents/TodoList';
 import '../sass/style.scss';
+import 'typeface-karla';
 
 window.onload = () => {
   const todoList = Object.create(TodoList);
