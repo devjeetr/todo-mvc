@@ -7,7 +7,8 @@
     "build-dev": "webpack --mode=development",
     "build-prod": "webpack --mode=production",
     "serve": "webpack-dev-server --inline --hot --mode=development",
-    "test": "mocha-webpack  --require tests/setup.js --webpack-config webpack.mocha.js \"tests/**/*test.js\" || true"
+    "test": "mocha-webpack  --require tests/setup.js --webpack-config webpack.mocha.js \"tests/**/*test.js\" || true",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +23,7 @@
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.14.0",
+    "gh-pages": "^2.0.0",
     "google-fonts-plugin": "^2.0.2",
     "google-fonts-webpack-plugin": "^0.4.4",
     "html-loader": "^0.5.5",

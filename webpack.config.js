@@ -1,8 +1,13 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
-const GoogleFontsPlugin = require('google-fonts-plugin');
+// const GoogleFontsPlugin = require('google-fonts-plugin');
+const path = require('path')
 
 module.exports = {
   entry: './src/js/index.js',
+  output: {
+    path: __dirname + '/dist',
+    publicPath: "/todo-mvc"
+  },
   module: {
     rules: [
       {
@@ -25,8 +30,10 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: [/dist/],
         use: {
           loader: 'html-loader',
+          
           options: { minimize: true },
         },
       },
@@ -34,21 +41,21 @@ module.exports = {
         test: /\.s?css$/,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
-      {
-        test: /\.(ttf|eot|woff|woff2)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            name: 'fonts/[name].[ext]',
-          },
-        },
-      },
+      // {
+      //   test: /\.(ttf|eot|woff|woff2)$/,
+      //   use: {
+      //     loader: 'url-loader',
+      //     options: {
+      //       name: 'fonts/[name].[ext]',
+      //     },
+      //   },
+      // },
     ],
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: './src/html/index.html',
-      filename: './index.html',
+      template: 'src/html/index.html',
+      filename: 'index.html',
     }),
     // new GoogleFontsPlugin({
     //   fonts: [
@@ -57,7 +64,7 @@ module.exports = {
     //     { family: 'Charmonman' },
     //     { family: 'Rubik' },
     //   ],
-    //   path: './dist/fonts/',
+    //   path: './dist/',
     // }),
   ],
   devtool: 'source-map',
