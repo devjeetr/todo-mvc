@@ -1,3 +1,4 @@
+@import "./colors";
 @import "./common";
 @import "./todo_list";
 @import "./todo_item";
@@ -12,13 +13,13 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: repeat(auto-fill, minmax(auto, auto));
   grid-auto-rows: auto;
-  font-family: "Charmonman";
+  font-family: "Rubik";
 }
 
 header{
   grid-column: 2 / 3;
   display: flex;
-  color: $todo-list-primary-font-color;
+  color: $header-font-color;
   font-size: 50px;
   align-items: center;
   justify-content: center;

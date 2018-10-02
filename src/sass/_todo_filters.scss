@@ -4,19 +4,32 @@
   justify-content: space-around;
   align-items: center;
   font-size: 19px;
+  transition: all 0.4s linear;
+
   div{
+    margin-left: 5px;
+    margin-right: 5px;
     display: flex;
     flex: 0 0 10%;
     cursor: pointer;
     padding: 0.4em;
+    border-radius: 5%;
+    padding: 0.5em;
+    position: relative;
+    z-index: 0;
   }
-  div:hover{
-    text-decoration: underline;
+  div:hover::before{
+    // box-shadow: 0 0 0 inset;
+    width: 100%;
+    color: white;
+    
   }
-  .filter-option-item--active{
-    text-decoration: underline;
-    font-weight: 900;
+  div:hover, .filter-option-item--active{
+    color: white;
+    background-color: #34495e;
+    // font-weight: 900;
   }
+ 
 }
 
 .todo-list-status-bar-root{

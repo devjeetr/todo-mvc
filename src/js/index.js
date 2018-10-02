@@ -1,8 +1,8 @@
 import {el} from 'vanillajs-framework';
-// import * as componentFramework from 'component-framework';
+
 import TodoList from './TodoComponents/TodoList';
 import '../sass/style.scss';
-import 'typeface-karla';
+import '../../public/fonts/woff2.css';
 
 window.onload = () => {
   const todoList = Object.create(TodoList);

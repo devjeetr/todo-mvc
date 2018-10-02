@@ -38,6 +38,11 @@ TodoItem.init = function (text) {
   this.$checkbox.on('click',
     (e) => {
       this.__eventStore.publish(this.__events.TODO_CHECKBOX_TOGGLED, e.target.checked);
+      if(e.target.checked){
+        this.$todoTextDiv.dom().classList.add("todo-item-completed");
+      } else {
+        this.$todoTextDiv.dom().classList.remove("todo-item-completed");
+      }
     });
   this.$deleteButton.on('click',
     (e) => {
@@ -73,12 +78,12 @@ TodoItem.init = function (text) {
 function makeEditable(isEditable) {
   if (isEditable) {
     this.$todoTextDiv.dom().innerHTML = '';
-    this.$todoTextDiv.dom().classList.add('todo-item--editing');
+    this.__root.dom().classList.add('todo-item--editing');
     this.$todoEditInput.render(this.$todoTextDiv);
     this.$todoEditInput.attr('value', this.__text);
     this.$todoEditInput.dom().focus();
   } else {
-    this.$todoTextDiv.dom().classList.remove('todo-item--editing');
+    this.__root.dom().classList.remove('todo-item--editing');
     this.$todoTextDiv.attr('textContent', this.__text);
   }
 }

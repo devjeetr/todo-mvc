@@ -30,6 +30,7 @@ TodoList.init = function () {
   this.todoInput.init();
   this.TodoStatusBar.init();
 
+  this.activeFilter = 'All';
   // TODO
   // Investigate why __root.append(this.todoInput)
   // doesn't work
@@ -78,6 +79,8 @@ function addTodo(newTodoText) {
     updateTodo.bind(this, this.todoCounter));
   // update remaining
   updateRemaining.call(this);
+
+  changeFilter.call(this, this.activeFilter);
   // TODO
   // display filter bar here
   this.TodoStatusBar.dom().dom().classList.add('visible');
@@ -85,6 +88,15 @@ function addTodo(newTodoText) {
 }
 
 function updateTodo(id) {
+}
+
+function markAllComplete() {
+  /* eslint-disable */
+  for (const todoItem of this.todosDataStore.values()) {
+    todoItem.completed = true;
+  }
+  /* eslint-enable */
+  changeFilter.call(this.filterOption);
 }
 
 function changeFilter(filterOption) {
@@ -106,6 +118,8 @@ function changeFilter(filterOption) {
     }
   }
   /* eslint-enable */
+
+  this.activeFilter = filterOption;
 }
 
 function clearCompletedTodos() {
@@ -115,18 +129,16 @@ function clearCompletedTodos() {
     const todoItem = this.todosDataStore.get(todoId);
     if (todoItem.completed) {
       todoItem.$element.detach();
-      this.todosDataStore.delete(todoItem);
+      this.todosDataStore.delete(todoId);
     } else {
       remaining += 1;
     }
   }
   /* eslint-enable */
   updateRemaining.call(this);
-  console.log(this.todosDataStore.entries().next());
-  if(!this.todosDataStore.entries().next()) {
+  if(this.todosDataStore.size === 0) {
     this.TodoStatusBar.dom().dom().classList.remove('visible');
   }
-  
 }
 
 
@@ -155,7 +167,8 @@ function deleteTodo(id) {
   this.todosDataStore.delete(id);
 
   updateRemaining.call(this);
-  if(!this.todosDataStore.entries().next()) {
+  if(this.todosDataStore.size === 0) {
+    // this.TodoStatusBar.detach();
     this.TodoStatusBar.dom().dom().classList.remove('visible');
   }
 }

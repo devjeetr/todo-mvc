@@ -7,6 +7,9 @@
   height: 3em;
   // border-bottom: 1px solid;
   border-top: 1px solid;
+  background-color: inherit;
+  transition: box-shadow 0.4s ease-in-out,
+              background-color 0.5s linear;
 
   .todo-list-todo-item-checkbox-div, 
   .todo-list-todo-item-delete-button-div, 
@@ -43,12 +46,20 @@
     flex: 0 0 70%;
     font-size: 20px;
     height: 100%;
-    // line-height: 1.2em;
+    line-height: 1.2em;
+
     input{
       flex: 0 0 100%;
-      font-size: 20px;
+      font-size: inherit;
+      
+      align-self: baseline;
+      align-content: flex-end;
+      font-family: inherit;
+      color: inherit;
       // font-family: inherit;
-
+      text-decoration: none;
+      font-weight: inherit;
+      line-height: inherit;
       border: none;
       background: transparent;
       width: auto;
@@ -56,17 +67,28 @@
       margin: 0;
       padding: 0;
       outline: none;
+      text-decoration: none!important;
       // opacity: 0;
     }
   }
-  .todo-item--editing{
-    border: 1px solid;
-    // opacity: 1;
-    transition: opacity 10s linear;
-  }
+  
 
   .todo-list-todo-item-delete-button-div:hover{
     cursor: pointer;
+  }
+}
+
+.todo-item-completed{
+  text-decoration: line-through;
+  font-weight: 100;
+  // background-color: $todo-item-editing-color;
+}
+
+.todo-item--editing{
+  
+  // transition: background-color 2s linear;
+  input[type="text"]{
+    text-decoration: none!important;
   }
 }
 
@@ -76,5 +98,5 @@
   }
   box-shadow: 0 0 8px;
 
-  transition: box-shadow 0.4s ease-in-out;
+  
 }
